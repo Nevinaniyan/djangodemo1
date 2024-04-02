@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Search
+{% endblock %}
+
+{% block search %}
+
+{# {{p}}  --> product sequence #}
+{# {{query}}  --> entered query #}
+
+<div class="text-center">
+    <h2 class="text-light fw-bolder">Showing Results for <span class="text-dark display-6 fw-bolder"> '{{q}}' </span></h2>
+</div>
+
+<div class="container-fluid mt-4" style="margin-bottom:100px;">
+    <div class="row">
+        {% for i in p %}
+        <div class="col-sm-4 mb-2 ">
+            <div class="card" style="width: 28rem;">
+                <img src="{{ i.image.url }}" class="card-img-top" alt="..." >
+                <div class="card-body ">
+                    <h5 class="card-title">{{ i.category_name }}</h5>
+                    <p class="card-text">{{ i.desc }}</p>
+                    <div class="button1">
+                        <a href="{% url 'shop:details' i.id %}" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    {% empty %}          {# if p is none then this will show #}
+    <h2 class="text-center">No results matching for {{query}}</h2>
+    {% endfor %}
+</div>
+{% endblock %}

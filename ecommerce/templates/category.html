@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Category
+{% endblock %}
+
+{% block cat %}
+
+<div class="container-fluid mt-4" >
+    <img src="{% static 'images/Screenshot 2024-03-19 143917.png' %}" width="100%">
+</div>
+
+<div class="container-fluid mt-4" style="margin-bottom:100px;">
+    <img src="{% static 'images/SummerPalooza-Landing-desktop-men-music-1710688061.jpg' %}" width="100%">
+</div>
+
+<div class="container-fluid mt-4" style="margin-bottom:100px;">
+    <div class="row">
+        {% for i in c %}
+        <div class="col mb-2 ">
+            <div class="card" style="width: 21rem; height:655px;">
+                <img src="{{ i.image.url }}" class="card-img-top" alt="..." height="400px;">
+                <div class="card-body bod">
+                    <h5 class="card-title">{{ i.category_name }}</h5>
+                    <p class="card-text">{{ i.desc }}</p>
+                    <div class="button1">
+                        <a href="{% url 'shop:all_prod' i.id %}" class="btn btn-primary">PRODUCTS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock %}

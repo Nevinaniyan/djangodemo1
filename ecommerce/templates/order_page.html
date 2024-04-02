@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Orders
+{% endblock %}
+
+{% block orders %}
+
+<div class="container-fluid my-5">
+    <div class="text-center display-5 text-light m-2">Name of the Customer:{{user}}</div>
+
+    {% for i in orders %}
+    <div class="row">
+        <div class="col border border-2">
+            <img src="{{i.product.image.url}}" height="200px" width="200px" style="margin-bottom:10px;">
+        </div>
+
+        <div class="col border border-3 border-dark">
+            <h5 class="text-light mt-1"> <span class="text-success">Product Name: </span> {{i.product.product_name}}</h5>
+            <h5 class="text-light"> <span class="text-success">Price: </span> {{i.product.price}}</h5>
+            <h5 class="text-light"> <span class="text-success">Delivery Address: </span> {{i.address}}</h5>
+            <h5 class="text-light"> <span class="text-success">Phone NUmber: </span> {{i.phone}}</h5>
+            <h5 class="text-light"> <span class="text-success">No. Of Items: </span> {{i.no_of_items}}</h5>
+            <h5 class="text-light"> <span class="text-success">Ordered Date: </span> {{i.ordered_date}}</h5>
+            <h5 class="text-light"> <span class="text-success">Delivery Status: </span>{{i.delivery_status}}</h5>
+
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+{% endblock %}

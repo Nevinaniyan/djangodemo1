@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block payment %}
+<div class="container-fluid text-light display-5" style="margin-bottom:400px;">
+    <p class="text-center text-light display5">{{message}}</p>
+    <p class="text-center text-light display5">Thank You... For Shopping With Us</p>
+    <p class="text-center text-light display5"><a href="{% url 'shop:all_cat' %}" class="btn btn-danger"> Continue Shopping </a></p>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Register
+{% endblock %}
+
+{% block content %}
+
+<h1 class = "text-center"> Sign-Up to A-Z Store</h1>
+<h1>Sign-In</h1>
+<form method="POST" style="margin-bottom:100px;">
+      {% csrf_token %}
+    <div class="mb-3">
+      <label class="form-label">Username</label>
+      <input type="text" class="form-control" name = "u" placeholder="Enter Username">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control"  name = "p" placeholder="Enter Password">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Confirm Password</label>
+      <input type="password" class="form-control"  name = "cp" placeholder="Confirm Password">
+    </div>
+
+     <div class="mb-3">
+      <label class="form-label">Email Id</label>
+      <input type="email" class="form-control"  name = "e" placeholder="Enter Your Mail Id">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">First Name</label>
+      <input type="text" class="form-control"  name = "f" placeholder="Enter FirstName">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Last Name</label>
+      <input type="text" class="form-control"  name = "l" placeholder="Enter LastName">
+    </div>
+
+    <input type="submit">
+
+</form>
+
+{% endblock %}

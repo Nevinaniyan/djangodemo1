@@ -1,0 +1,54 @@
+body
+{
+background-color:#41464b;
+  font-family: "Fresca", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.footer {
+background: linear-gradient(to right, #393E46,grey);
+color: white;
+padding: 30px 0;
+margin: 0;
+width: 100%;
+position: relative;
+bottom:0;
+left:0;
+border-top: 1px solid white;
+}
+
+.foot_text{
+color:#ada5a7
+}
+
+.bod {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.button1 {
+    margin-top: auto;
+    margin-left:100px;
+}
+
+.prod-flex1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-col{
+webkit-text-stroke: 4px black;
+font-weight:bolder;
+color:white;
+}
+
+.pink{
+background-color: #FFC0CB;
+}
+
+.mouse-over:hover {
+    color: black;
+}

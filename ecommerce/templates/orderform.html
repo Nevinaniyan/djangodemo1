@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Payment
+{% endblock %}
+
+
+{% block payment %}
+
+<h1>Welcome to the Payment Page</h1>
+<p class="text-light">Please Enter the below mandatory Details</p>
+
+<form method="POST" style="margin-bottom:100px;">
+      {% csrf_token %}
+    <div class="mb-3">
+      <label class="form-label text-light">Address</label>
+      <input type="text" class="form-control" name = "ad" placeholder="Enter your Address">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label text-light">Account Number</label>
+      <input type="number" class="form-control" name = "ac" placeholder="Enter your Account Number">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label text-light">Phone Number</label>
+      <input type="number" class="form-control" name = "ph" placeholder="Enter your Phone Number">
+    </div>
+
+    <input type="submit">
+
+</form>
+
+{% endblock %}

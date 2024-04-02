@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Products
+{% endblock %}
+
+{% block prod %}
+
+
+<div class="container-fluid mt-4 prod-flex1" style="margin-bottom:40px;">
+    <img src="{{c.image.url}}"  width="50%" height="600px;">
+</div>
+
+
+<div class="container-fluid">
+    <h1 class="prod-flex1 text-col">{{c.category_name}}</h1>
+    <p class="text-center display-6 text-light border border-secondary border-2 my-4 ">{{c.desc}}</p>
+</div>
+
+
+<div class="container-fluid mt-4 prod-flex1" style="margin-bottom:100px;">
+    <div class="row">
+        {% for i in p %}
+        <div class="col-sm mb-2 me-2 ">
+            <div class="card" style="width: 25rem; height:700px;">
+                <img src="{{ i.image.url }}" class="card-img-top" alt="..." height="400px;">
+                <div class="card-body bod">
+                    <h5 class="card-title">{{ i.category_name }}</h5>
+                    <p class="card-text">{{ i.desc }}</p>
+                    <div class="button1">
+                        <a href="{% url 'shop:details' i.id %}" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
